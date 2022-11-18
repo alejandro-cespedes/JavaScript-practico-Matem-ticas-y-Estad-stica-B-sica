@@ -68,3 +68,7 @@ function CalcularAlturaTrianguloEscaleno(lado1, lado2, lado3) {
 
 console.groupEnd('Triangulo') 
 
+function CalcularDescuento(precio, descuento){
+  const precioConDescuento = (precio * (100 - descuento)) / 100
+  return precioConDescuento
+}

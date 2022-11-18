@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-weight: bold;
+    }
+    .main-container {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        
+        
+    }
+    .disc-container {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        background: MidnightBlue;
+        width: 300px;      
+    }
+    div {
+        color: white;
+    }
+    h1 {
+        text-align: center;
+    }
+    label {
+        margin-left: 12px;
+        font-size: 13px;
+    }
+    input {
+        color: white;
+        background: #00477e;
+        margin: 12px;
+        border: 1px solid DodgerBlue; 
+    }
+    button {
+        color: white;
+        background: green;
+        border-radius: 3px;
+        border: none;
+        margin: 12px 70px;
+        cursor: pointer;
+    }
+    #result {
+        text-align: center;
+        margin-bottom: 12px;
+    }
+</style>
+<body>
+    <section class="main-container">
+        <div class="disc-container">
+            <h1>Ingrese el cupon de descuento</h1>
+            <label>Ingresa el Precio</label>
+                <input type="text" id="price">
+            <label>Ingresa el cupon</label>
+                <input type="text" id="cupon">
+            <button onclick="descuento()" id="btn">Generar Descuento</button>
+                <span id="result"></span>
+        </div>
+     </section>
+    <script src="descuento.js"></script>
+</body>
+</html>
+</body>
+</html>
