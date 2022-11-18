@@ -33,6 +33,7 @@ function calcularTriangulo(lado1, lado2, base, altura) {
   return {
     perimetro: lado1 + lado2 + base,
     area: (base * altura) / 2,
+
   };
 }
 
@@ -45,4 +46,25 @@ console.log({
   areaTriangulo,
 });
 
+function CalcularAlturaTriangulo(lado1, base) {
+  if (lado1 == base) {
+    console.warn('Este no es un triangulo isosceles')
+  }
+  else {
+    return Math.sqrt((lado1 ** 2) - ((base ** 2) / 4))
+  }
+}
+
+
+function CalcularAlturaTrianguloEscaleno(lado1, lado2, lado3) {
+  if (lado1 && lado2 == lado3 || lado2 && lado3 == lado1){
+    return console.warn('False')
+  }
+  else {
+    const semiperimetro = (lado1 + lado2 + lado3) / 2
+    return (2 / lado1 ) * (Math.sqrt(semiperimetro * (semiperimetro - lado1) * (semiperimetro - lado2) * (semiperimetro - lado3)))
+  }
+}
+
 console.groupEnd('Triangulo') 
+
