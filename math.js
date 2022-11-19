@@ -68,7 +68,27 @@ function CalcularAlturaTrianguloEscaleno(lado1, lado2, lado3) {
 
 console.groupEnd('Triangulo') 
 
-function CalcularDescuento(precio, descuento){
-  const precioConDescuento = (precio * (100 - descuento)) / 100
-  return precioConDescuento
+
+console.group('Porcentaje')
+
+
+  const users = [];
+    users.push({ 
+    id: 123, 
+    name: 'Juanito Alcachofa' 
+    });
+
+    users.push({
+    id: 456, 
+    name: 'Juanita Alcaparra' });
+
+    function solution(users, id) {
+    let usuario = users.find((item) =>  item.id == id )
+    if (usuario) {
+      return usuario.name
+    } else {
+      return false
+    }
 }
+  
+console.groupEnd('Porcentaje') 

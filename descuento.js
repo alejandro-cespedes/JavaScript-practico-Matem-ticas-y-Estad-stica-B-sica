@@ -3,23 +3,40 @@ function descuento() {
     const cupon = document.querySelector('#cupon').value;
     const result = document.querySelector('#result');
        
-    const discounts = {
-        platzivacation: 10,
-        mothersday: 15,
-        independenceday: 20,
-        christmas: 50,
-    };
-    if (cupon === "platzivacation") {
-        result.innerText = "Usted Obtuvo un cupon de" + " " + discounts.platzivacation + "% y el total seria" + " " + price * (100 - discounts.platzivacation) / 100 + "$"
+    const discounts = []
+    discounts.push({
+        name: 'platzivacation',
+        discount: 10,
+    });
+    discounts.push({
+        name: 'mothersday',
+        discount: 20,
+    });
+    discounts.push({
+        name: 'christmas',
+        discount: 50,
+    });
+    discounts.push({
+        name: 'independenceday',
+        discount: 30,
+    });
+    
 
-    } else if (cupon === "mothersday") {
-        result.innerText = "Usted Obtuvo un cupon de" + " " + discounts.mothersday + "% y el total seria" + " " + price * (100 - discounts.platzivacation) / 100 + "$"
-
-    } else if (cupon === "independenceday") {
-        result.innerText = "Usted Obtuvo un cupon de" + " " + discounts.independenceday + "% y el total seria" + " " +  price * (100 - discounts.platzivacation) / 100 + "$"
-    } else if (cupon === "christmas") {
-        result.innerText = "Usted Obtuvo un cupon de" + " " + discounts.christmas + "% y el total seria" + " " +price * (100 - discounts.platzivacation) / 100 + "$"
-    } else {
-        result.innerText = "Ese cupon de descuento no es valido"
+    const descuentosFiltrados = discounts.find(disc => disc.name == cupon);
+        if (descuentosFiltrados) {
+            result.innerText = "Usted Obtubo un cupon es de " + descuentosFiltrados.discount + " % y el precio mas el descuento es de  " + (price * (100 - descuentosFiltrados.discount))/100 + "$"; 
+        } else {
+            result.innerText = "Este cupon no es valido"
+        }
     }
-}
+
+
+    //function solution(users, id) 
+    //let usuario = users.find((item) =>  item.id == id )
+    //if (usuario) {
+    //  return usuario.name
+    //} else {
+    //  return false
+    //}
+
+//result.innerText = "Usted Obtubo un cupon es de " + disc.discount + " % y el precio mas el descuento es de  " + (price * (100 - disc.discount))/100 + "$"; 
